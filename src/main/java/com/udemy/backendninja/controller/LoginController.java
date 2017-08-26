@@ -49,7 +49,7 @@ public class LoginController {
 
 		if (userCredential.getUsername().equals("user") && userCredential.getPassword().equals("user")) {
 			LOG.info("Returning to contacts view");
-			return "contacts";
+			return "redirect:/contacts/showcontacts";
 		}
 		LOG.info("Returning to with error");
 		return "redirect:/login?error";
