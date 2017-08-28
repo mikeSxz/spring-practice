@@ -6,9 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Component;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ContactConverter.
+ */
 @Component("contactConverter")
 public class ContactConverter {
 
+    /**
+     * Model 2 entity.
+     *
+     * @param contactModel the contact model
+     * @return the contact
+     */
     public Contact model2Entity(ContactModel contactModel) {
         Contact contact = new Contact();
         contact.setId(contactModel.getId());
@@ -19,6 +29,12 @@ public class ContactConverter {
         return contact;
     }
 
+    /**
+     * Entity 2 model.
+     *
+     * @param contact the contact
+     * @return the contact model
+     */
     public ContactModel entity2Model(Contact contact) {
         ContactModel contactModel = new ContactModel();
         contactModel.setId(contact.getId());
@@ -29,6 +45,12 @@ public class ContactConverter {
         return contactModel;
     }
 
+    /**
+     * Entity list to model list.
+     *
+     * @param contactList the contact list
+     * @return the list
+     */
     public List<ContactModel> entityListToModelList(List<Contact> contactList) {
         List<ContactModel> contactModelList = new ArrayList<ContactModel>();
         for (Contact contact : contactList) {
