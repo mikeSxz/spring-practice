@@ -19,7 +19,7 @@ public class UserRole {
     @Column(name = "user_role_id", unique = true, nullable = false)
     private Integer userRoleId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "username", nullable = false)
     private User user;
 
@@ -28,8 +28,18 @@ public class UserRole {
 
     public UserRole() {
     }
+    
+    
 
-    public UserRole(Integer userRoleId, User user, String role) {
+    public UserRole(User user, String role) {
+		super();
+		this.user = user;
+		this.role = role;
+	}
+
+
+
+	public UserRole(Integer userRoleId, User user, String role) {
         this.userRoleId = userRoleId;
         this.user = user;
         this.role = role;

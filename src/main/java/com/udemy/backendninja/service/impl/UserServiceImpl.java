@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserDetailsService {
 		return buildUser(user, authorities);
 	}
 
-	private org.springframework.security.core.userdetails.User buildUser(com.udemy.backendninja.entity.User user,
+	private User buildUser(com.udemy.backendninja.entity.User user,
 			List<GrantedAuthority> authorities) {
 
 		return new User(user.getUsername(), user.getPassword(), user.isEnabled(), true, true, true, authorities);
